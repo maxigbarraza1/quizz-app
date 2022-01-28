@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-center titulo">Iniciar Sesión</h2>
+                    <br>
+                    <form [formGroup]="loginForm" (ngSubmit)="login()">
+                        <div class="mb-3">
+                            <input type="email" formControlName="usuario" class="form-control form-control-lg" placeholder="Correo electronico">
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" formControlName="password" class="form-control form-control-lg" placeholder="Contraseña">
+                        </div>
+                        <button class="btn btn-secondary btn-lg" routerLink="/">Volver</button>
+                        <button type="submit" class="btn btn-primary btn-lg float-end">Iniciar sesión</button>
+                    </form>
+                    <br>
+                    <div class="text-center">
+                        <a href="">Registrarse</a>
+                        <br>
+                        <a href="">Recuperar contraseña</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
