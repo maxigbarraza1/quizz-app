@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "mgb-quizzapp": {
+      "hosting": {
+        "QuizzApp": [
+          "mgb-quizzapp"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "mgb-quizzapp"
+  }
+}

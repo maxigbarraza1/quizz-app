@@ -20,6 +20,8 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     UsuarioRoutingModule,
     SharedModule,
+  ],
+  exports:[
   ]
 })
 export class UsuarioModule { }
