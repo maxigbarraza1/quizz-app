@@ -2,7 +2,9 @@
 
 Proyecto personal de aplicación web de preguntas y respuestas, desarrollada con: 
 
--Angular
--TypeScript
--SASS
--Firebase
+- Angular
+- TypeScript
+- SASS
+- Firebase
+
+
