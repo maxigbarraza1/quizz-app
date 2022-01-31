@@ -4,6 +4,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { ErrorService } from '../../../services/error.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { User } from 'src/app/models/User.model';
 
 @Component({
   selector: 'app-login',
@@ -30,6 +31,14 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  setLocalStorage(user:any): void{
+    const usuario:User={
+      uID:user.uid,
+      email:user.email
+    }
+    localStorage.setItem('usuario',JSON.stringify(usuario));
+  }
+
   login(){
     const user=this.loginForm.get('usuario')?.value;
     const password=this.loginForm.get('password')?.value;
@@ -39,7 +48,8 @@ export class LoginComponent implements OnInit {
         console.log(resp);
         this.loading=false;
         if(resp.user?.emailVerified){
-          // this.router.navigate(['/usuario']);
+          this.router.navigate(['/dashboard']);
+          this.setLocalStorage(resp.user);
 
         }else{
           this.router.navigate(['/usuario/verificarCorreo']);

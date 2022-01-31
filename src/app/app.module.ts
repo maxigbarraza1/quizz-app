@@ -12,7 +12,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
-import { InicioComponent } from './components/inicio/inicio.component';
+import { DashboardModule } from './components/dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,8 @@ import { InicioComponent } from './components/inicio/inicio.component';
     SharedModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    DashboardModule,
 
   ],
   providers: [],
