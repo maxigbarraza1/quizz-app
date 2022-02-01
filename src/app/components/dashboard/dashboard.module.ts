@@ -5,13 +5,15 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CuestionariosComponent } from './cuestionarios/cuestionarios.component';
+import { NuevoCuestionarioComponent } from './nuevo-cuestionario/nuevo-cuestionario.component';
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
     NavbarComponent,
-    CuestionariosComponent
+    CuestionariosComponent,
+    NuevoCuestionarioComponent
   ],
   imports: [
     CommonModule,
