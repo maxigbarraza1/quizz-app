@@ -1,1 +1,39 @@
+<<<<<<< HEAD
+<div *ngIf="mostrarError" class="alert alert-danger text-center" role="alert">
+    Por favor ingrese todos los campos
+</div>
+
+<div class="d-flex justify-content-center mt-3">
+    <div class="card card-titulo">
+        <div class="card-body text-center">
+            <h4 class="titulo">INGRESE DATOS DEL CUESTIONARIO</h4>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-body">
+                    <form [formGroup]="cuestionarioForm">
+                        <div class="form-group mb-3">
+                            <input type="text" formControlName="titulo" class="form-control form-control-lg input" placeholder="Titulo">
+                        </div>
+                        <div class="form-group mb-3">
+                            <textarea rows="3" formControlName="descripcion" class="form-control form-control-lg input" placeholder="Descripción"></textarea>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="colg-lg-12">
+                    <button (click)="siguiente()" class="btn-principal btn-siguiente">Siguiente</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+=======
 <p>nuevo-cuestionario works!</p>
+>>>>>>> 9fb3a551b547291763b23525c2c7a4613058a440
