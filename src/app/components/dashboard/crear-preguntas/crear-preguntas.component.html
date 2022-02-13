@@ -1,3 +1,6 @@
+<div *ngIf="mostrarError" class="alert alert-danger text-center" role="alert">
+    Por favor ingrese todos los campos
+</div>
 <div class="container">
     <div class="row mt-3 mb-5">
         <div class="col-lg-8 offset-lg-2">
@@ -69,6 +72,8 @@
                     </div>
                 </div>
             </form>
+
+            <app-listado-preguntas></app-listado-preguntas>
         </div>
     </div>
 </div>

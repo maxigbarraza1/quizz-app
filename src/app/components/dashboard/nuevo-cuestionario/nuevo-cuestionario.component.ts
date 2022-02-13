@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { QuizzService } from '../../../services/quizz.service';
-=======
->>>>>>> 9fb3a551b547291763b23525c2c7a4613058a440
 
 @Component({
   selector: 'app-nuevo-cuestionario',
@@ -13,7 +10,6 @@ import { QuizzService } from '../../../services/quizz.service';
 })
 export class NuevoCuestionarioComponent implements OnInit {
 
-<<<<<<< HEAD
   cuestionarioForm:FormGroup;
   mostrarError=false;
 
@@ -26,14 +22,10 @@ export class NuevoCuestionarioComponent implements OnInit {
       descripcion:['',Validators.required], 
     })
   }
-=======
-  constructor() { }
->>>>>>> 9fb3a551b547291763b23525c2c7a4613058a440
 
   ngOnInit(): void {
   }
 
-<<<<<<< HEAD
   siguiente(){
     console.log(this.cuestionarioForm);
     if(this.cuestionarioForm.invalid){
@@ -48,6 +40,4 @@ export class NuevoCuestionarioComponent implements OnInit {
       this.router.navigate(['/dashboard/crear-preguntas']);
     }
   }
-=======
->>>>>>> 9fb3a551b547291763b23525c2c7a4613058a440
 }
