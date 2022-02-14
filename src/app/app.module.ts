@@ -7,9 +7,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { ComponentsModule } from './components/components.module';
 import { SharedModule } from './components/shared/shared.module';
 import { ToastrModule } from 'ngx-toastr';
-
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { DashboardModule } from './components/dashboard/dashboard.module';
@@ -26,6 +26,7 @@ import { DashboardModule } from './components/dashboard/dashboard.module';
     SharedModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    AngularFirestoreModule,
     ToastrModule.forRoot(),
     DashboardModule,
 
