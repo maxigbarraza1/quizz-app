@@ -2,14 +2,17 @@
 <div class="d-flex justify-content-center mt-3">
     <button routerLink="/dashboard/nuevo-cuestionario" class="btn-principal btn-quizz">Nuevo</button>
 </div>
+<div *ngIf="loading" class="d-flex justify-content-center mt-3">
+    <app-spinner></app-spinner>
+</div>
 
-<div class="container ">
+<div *ngIf="listCuestionarios.length>0 && !loading" class="container ">
     <div class="row mt-3">
         <div class="col-lg-8 offset-lg-2">
-            <div class="card ">
+            <div class="card">
                 <div class="card-body text-center">
                     <div class="table">
-                        <thead >
+                        <thead>
                             <tr>
                                 <th>Titulo</th>
                                 <th>N° Preguntas</th>
@@ -18,18 +21,30 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Mundial de futbol</td>
-                                <td>10</td>
-                                <td><span class="badge bg-black">MG9D</span></td>
+                            <tr *ngFor="let cuestionario of listCuestionarios">
+                                <td>{{cuestionario.titulo}}<td>
+                                <td>{{cuestionario.cantidadPreguntas}}</td>
+                                <td><span class="badge bg-black">{{cuestionario.codigo}}</span></td>
                                 <td>
-                                    <i class="fas fa-search"></i>
+                                    <i [routerLink]="['/dashboard/ver-cuestionario', cuestionario.id]" class="fas fa-search"></i>
                                     <i class="fas fa-chart-line"></i>
-                                    <i class="fas fa-trash-alt"></i>
+                                    <i (click)="eliminarCuestionario(cuestionario.id!)" class="fas fa-trash-alt"></i>
                                 </td>
                             </tr>
                         </tbody>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" *ngIf="listCuestionarios.length==0 && !loading">
+    <div class="row mt-3" >
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-body">
+                    <h5>No hay cuestionarios cargados.</h5>
                 </div>
             </div>
         </div>

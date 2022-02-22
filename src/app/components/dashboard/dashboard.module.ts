@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CrearPreguntasComponent } from './crear-preguntas/crear-preguntas.component';
 import { ListadoPreguntasComponent } from './listado-preguntas/listado-preguntas.component';
 import { SharedModule } from '../shared/shared.module';
+import { VerCuestionarioComponent } from './ver-cuestionario/ver-cuestionario.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { SharedModule } from '../shared/shared.module';
     CuestionariosComponent,
     NuevoCuestionarioComponent,
     CrearPreguntasComponent,
-    ListadoPreguntasComponent
+    ListadoPreguntasComponent,
+    VerCuestionarioComponent
   ],
   imports: [
     CommonModule,

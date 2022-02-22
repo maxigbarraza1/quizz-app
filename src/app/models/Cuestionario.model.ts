@@ -1,6 +1,6 @@
 import { Pregunta } from './Preguntas.model';
 export class Cuestionario{
-    id?:number;
+    id?:string;
     uID:string;
     titulo:string;
     descripcion:string;

@@ -25,4 +25,16 @@ export class QuizzService {
   crearCuestionario(cuestionario:Cuestionario):Promise<any>{
     return this._firestore.collection('cuestionarios').add(cuestionario);
   }
+
+  getCuestionariosByIdUser(uID:string):Observable<any>{
+    return this._firestore.collection('cuestionarios', ref => ref.where('uID','==',uID)).snapshotChanges()
+  }
+
+  eliminarCuestionario(idCuestionario:string):Promise<any>{
+    return this._firestore.collection('cuestionarios').doc(idCuestionario).delete()
+  }
+
+  getCuestionario(id:string):Observable<any>{
+    return this._firestore.collection('cuestionarios').doc(id).get()
+  }
 }
