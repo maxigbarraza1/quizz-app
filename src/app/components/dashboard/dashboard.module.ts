@@ -11,6 +11,7 @@ import { CrearPreguntasComponent } from './crear-preguntas/crear-preguntas.compo
 import { ListadoPreguntasComponent } from './listado-preguntas/listado-preguntas.component';
 import { SharedModule } from '../shared/shared.module';
 import { VerCuestionarioComponent } from './ver-cuestionario/ver-cuestionario.component';
+import { EstadisticasComponent } from './estadisticas/estadisticas.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { VerCuestionarioComponent } from './ver-cuestionario/ver-cuestionario.co
     NuevoCuestionarioComponent,
     CrearPreguntasComponent,
     ListadoPreguntasComponent,
-    VerCuestionarioComponent
+    VerCuestionarioComponent,
+    EstadisticasComponent
   ],
   imports: [
     CommonModule,

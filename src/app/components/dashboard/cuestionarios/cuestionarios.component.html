@@ -1,52 +1,51 @@
-
 <div class="d-flex justify-content-center mt-3">
-    <button routerLink="/dashboard/nuevo-cuestionario" class="btn-principal btn-quizz">Nuevo</button>
+    <button routerLink="/dashboard/nuevo-cuestionario" class="btn-principal btn-quizz">NUEVO</button>
 </div>
 <div *ngIf="loading" class="d-flex justify-content-center mt-3">
     <app-spinner></app-spinner>
 </div>
-
-<div *ngIf="listCuestionarios.length>0 && !loading" class="container ">
+<div *ngIf="listCuestionarios.length > 0 && !loading" class="container">
     <div class="row mt-3">
         <div class="col-lg-8 offset-lg-2">
             <div class="card">
                 <div class="card-body text-center">
-                    <div class="table">
+                    <table class="table">
                         <thead>
                             <tr>
                                 <th>Titulo</th>
-                                <th>N° Preguntas</th>
-                                <th>Codigo sala</th>
+                                <th>Cant. Preguntas</th>
+                                <th>Codigo</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr *ngFor="let cuestionario of listCuestionarios">
-                                <td>{{cuestionario.titulo}}<td>
-                                <td>{{cuestionario.cantidadPreguntas}}</td>
-                                <td><span class="badge bg-black">{{cuestionario.codigo}}</span></td>
+                                <td>{{ cuestionario.titulo }}</td>
+                                <td>{{ cuestionario.cantidadPreguntas }}</td>
+                                <td><span class="badge bg-black">{{ cuestionario.codigo }}</span></td>
                                 <td>
                                     <i [routerLink]="['/dashboard/ver-cuestionario', cuestionario.id]" class="fas fa-search"></i>
-                                    <i class="fas fa-chart-line"></i>
-                                    <i (click)="eliminarCuestionario(cuestionario.id!)" class="fas fa-trash-alt"></i>
+                                    <i [routerLink]="['/dashboard/estadisticas', cuestionario.id]" class="fas fa-chart-line"></i>
+                                    <i (click)="eliminarCuestionario(cuestionario.id!)" class="fas fa-trash"></i>
                                 </td>
                             </tr>
                         </tbody>
-                    </div>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="container" *ngIf="listCuestionarios.length==0 && !loading">
-    <div class="row mt-3" >
+<div *ngIf="listCuestionarios.length == 0 && !loading" class="container">
+    <div class="row mt-3">
         <div class="col-lg-8 offset-lg-2">
             <div class="card">
                 <div class="card-body">
-                    <h5>No hay cuestionarios cargados.</h5>
+                    <h5>No hay cuestionarios para mostrar</h5>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
